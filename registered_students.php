@@ -2,6 +2,52 @@
 <html>
 <head>
     <title>Registered Students</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e9e9e9;
+        }
+
+        .no-data {
+            text-align: center;
+            font-weight: bold;
+            color: #ff0000;
+        }
+    </style>
 </head>
 <body>
     <h1>Registered Students</h1>
@@ -35,9 +81,9 @@
 
         echo "</table>";
     } else {
-        echo "No students found.";
+        echo "<p class='no-data'>No students found.</p>";
     }
-
+    
     mysqli_close($conn);
     ?>
 </body>
